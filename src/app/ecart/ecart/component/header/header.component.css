@@ -1,0 +1,19 @@
+
+navbar{
+    margin-left:138px ;
+    height: 31px;
+    width: 30%;
+    font-size: smaller;
+}
+    .SearchInput{
+        padding: 5px;
+        margin: 5px;
+    }
+
+  
+
+
+.btn{
+    padding: 5px;
+    margin: 5px;
+}

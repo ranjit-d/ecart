@@ -1,0 +1,103 @@
+<p>signup works!</p>
+
+<div class="container">
+    <div class="card">
+        <form [formGroup]="signupform" (ngsubmit)="onsubmit()" class="row g-3 text-left bg-white">
+            <label for="firstname">Firstname:</label>
+            <input type="text" class="form-control" name="fistname" id="fistname"  pattern="^[a-zA-Z]+$" formControlName="fistname">
+            <div *ngIf="signupform.controls['firstname'].errors?.['required']  &&(signupform.controls['firstname'].touched || signupform.controls['firstname'].dirty)" >
+                firstname is required</div>
+                <!-- <div *ngIf="signupform.controls['maxlength'].errors?.['required']  &&(signupform.controls['firstname'].touched || signupform.controls['firstname'].dirty)" >
+                    max 10 charactar allowed</div> -->
+
+                <div *ngIf="Firstname?.errors?.['maxlength'] && (Firstname?.touched || Firstname?.dirty)"
+                class="invaild-feedback d-block">mx 10 allowed</div>
+        </form>
+    </div>
+    <!-- <div class="valid.feedback">
+        look good!
+    </div> -->
+    <div class="mb-1">
+        <label for="lastname">lastname:</label>
+        <input type="text" class="form-control" name="lastname" id="lastname" formControlName="fistname">
+        <div class="valid.feedback">lastname is required</div>
+    </div>
+    <div class="mb-1">
+        <label for="mobileno">mobileno:</label>
+        <input type="text" class="form-control" name="mobileno" id="mobileno" formControlName="mobileno">
+        <div class="valid.feedback">look good</div>
+    </div>
+    <div class="mb-1">
+        <label for="DOB">DOB:</label>
+        <input type="text" class="form-control" name="DOB" id="DOB" formControlName="dateofbirth">
+        <div class="valid.feedback">look good</div>
+    </div>
+    <div class="mb-1">
+        <label for="emailid">emailid:</label>
+        <input type="text" class="form-control" name="emailid" id="emailid" formControlName="emailid">
+        <div class="valid.feedback">look good</div>
+    </div>
+    <div class="mb-1">
+        <label for="password">password:</label>
+        <input type="password" class="form-control" name="password" id="password" formControlName="password">
+        <div class="valid.feedback">look good</div>
+    </div>
+    <div class="mb-1">
+        <label for="confirmpassword" class="form-label">confirmpassword:</label>
+        <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" formControlName="confirmpassword">
+        <div class="valid.feedback">look good</div>
+    </div>
+    <div *ngIf="signupform.controls['confirmpassword'].errors?.['passwordnotmatch'] 
+    &&(signupform.controls['confirmpassword'].touched || signupform.controls['firstname'].dirty)"> password and confirmpassword is not same</div>
+    <div class="mb-1">
+        <h3>address section:</h3>
+        <div formGroupName="address" *ngif="actionName!='signin'"></div>
+        <div formGroupName="address">
+            <div class="row-md-6">
+       
+        <label for="line1" class="form-label">line1:</label>
+        <input type="text" class="form-control is-invaild" name="line1" id="line1" aria-describedby="validationserverfeedback" formControlName="line1">
+       <div id="validationserverfeedback" class="invaild.feedback">please provide line1</div>
+       
+    </div>
+    <div class="col-12">
+        <div class="form-check">
+            <label class="form-check-label" for="invalidcheck3">Agree and term condition</label>
+            <input type="form-check-input is.invalid" type="checkbox" 
+            name="isaccept" value="" id="invalidcheck" aria-describedby="validationserverfeedback" formControlName="address">
+         
+        </div>
+    </div>
+    <div class="row-md-6">
+       
+        <label for="line2" class="form-label">line2:</label>
+        <input type="text" class="form-control is-invaild" name="line2" id="line2" aria-describedby="validationserverfeedback" formControlName="line2">
+       <div id="validationserverfeedback" class="invaild.feedback">please provide line2</div>
+       
+    </div>
+    <div class="row-md-6">
+       
+        <label for="city" class="form-label">city:</label>
+        <input type="text" class="form-control is-invaild" name="line1" id="city" aria-describedby="validationserverfeedback" formControlName="city">
+       <div id="validationserverfeedback" class="invaild.feedback">please provide city</div>
+       
+    </div>
+    <div class="row-md-6">
+       
+        <label for="state" class="form-label">state:</label>
+        <input type="text" class="form-control is-invaild" name="line1" id="state" aria-describedby="validationserverfeedback" formControlName="state">
+       <div id="validationserverfeedback" class="invaild.feedback">please provide state</div>
+       
+    </div>
+    <div class="row-md-6">
+       
+        <label for="zipcode" class="form-label">zipcode:</label>
+        <input type="text" class="form-control is-invaild" name="line1" id="zipcode" aria-describedby="validationserverfeedback" formControlName="zipcode">
+       <div id="validationserverfeedback" class="invaild.feedback">please provide zipcode</div>
+       
+    </div>
+    
+</div>
+    </div>
+    <button type="button">submit</button>
+</div>

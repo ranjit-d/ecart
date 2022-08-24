@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  actiontype:string='signin'
   constructor() { }
 
   ngOnInit(): void {
   }
+ 
+  
+  handleAction(){
+    this.actiontype='signin'
 
+  }
 }
